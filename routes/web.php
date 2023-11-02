@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\DesignationController;
+use App\Http\Controllers\GenderController;
 
 
 /*
@@ -36,3 +38,5 @@ require __DIR__.'/auth.php';
 
 
 Route::get('/department', [DepartmentController::class, 'index'])->name('dept.index');
+Route::get('/designation',[DesignationController::class,'index'])->name('desgnt.index');
+Route::get('/gender',[GenderController::class,'index'])->name('gender.index');
