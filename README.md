@@ -4,4 +4,4 @@ Learn Basic
    * composer create-project laravel/laravel example-app
    * composer install
    * php artisan key:generate
-   * php artisan migrate8uh
+   * php artisan migrate
