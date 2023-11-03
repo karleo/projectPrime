@@ -6,6 +6,8 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\DesignationController;
 use App\Http\Controllers\GenderController;
+use App\Http\Controllers\CountryController;
+use App\Http\Controllers\StateController;
 
 
 /*
@@ -40,3 +42,5 @@ require __DIR__.'/auth.php';
 Route::get('/department', [DepartmentController::class, 'index'])->name('dept.index');
 Route::get('/designation',[DesignationController::class,'index'])->name('desgnt.index');
 Route::get('/gender',[GenderController::class,'index'])->name('gender.index');
+Route::get('/country',[CountryController::class,'index'])->name('country.index');
+Route::get('/states',[StateController::class,'index'])->name('states.index');
