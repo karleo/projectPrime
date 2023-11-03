@@ -36,7 +36,16 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-
+//department
 Route::get('/department', [DepartmentController::class, 'index'])->name('dept.index');
+Route::get('/department/create', [DepartmentController::class, 'create'])->name('dept.create');
+Route::post('/department/create', [DepartmentController::class, 'store'])->name('dept.store');
+Route::get('/department/{department}', [DepartmentController::class, 'edit'])->name('dept.edit');
+Route::post('/department/{department}', [DepartmentController::class, 'update'])->name('dept.update');
+
+
+
+
+
 Route::get('/designation',[DesignationController::class,'index'])->name('desgnt.index');
 Route::get('/gender',[GenderController::class,'index'])->name('gender.index');
