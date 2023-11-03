@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             DefaultUserSeeder::class,
             DefaultGenderSeeder::class,
             DefaultDepartmentSeeder::class,
+            DefaultDesignationSeeder::class,
         ]);
     }
 }
