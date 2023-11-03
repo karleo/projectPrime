@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call([
             DefaultUserSeeder::class,
+            DefaultGenderSeeder::class,
+            DefaultDepartmentSeeder::class,
         ]);
     }
 }
