@@ -8,7 +8,7 @@ use App\Http\Controllers\DesignationController;
 use App\Http\Controllers\GenderController;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\StateController;
-
+use App\Http\Controllers\CityController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,3 +44,4 @@ Route::get('/designation',[DesignationController::class,'index'])->name('desgnt.
 Route::get('/gender',[GenderController::class,'index'])->name('gender.index');
 Route::get('/country',[CountryController::class,'index'])->name('country.index');
 Route::get('/states',[StateController::class,'index'])->name('states.index');
+Route::get('/city',[CityController::class,'index'])->name('city.index');
