@@ -1,6 +1,6 @@
 @extends('layouts.admin.main')
 
-@section('page.title', 'Designation')
+@section('page.title', 'City')
 
 @section('page.toolbar')
 
@@ -25,7 +25,7 @@
                 </div>
                 <div class="card-toolbar">
                     <!--begin::Button-->
-                    <a href="{{route('desgnt.create')}}" class="btn btn-primary font-weight-bolder">
+                    <a href="{{route('cities.create')}}" class="btn btn-primary font-weight-bolder">
                     <span class="svg-icon svg-icon-md">
                         <!--begin::Svg Icon | path:assets/media/svg/icons/Design/Flatten.svg-->
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -46,20 +46,20 @@
                 <table id="kt_datatable_dom_positioning" class="table table-striped table-row-bordered gy-5 gs-7 border rounded">
                     <thead>
                         <tr class="fw-bold fs-6 text-gray-800 px-7">
-                            <th>Designation ID</th>
-                            <th>Code</th>
+                            <th>City ID</th>
+                            <th>State ID</th>
                             <th>Name</th>
-                          
+                            <th>Code</th>
                         </tr>
                     </thead>
                     @foreach ( $data as $row )
                     <tbody>
                         <tr>
-                            <td>{{ $row->designation_id}}</td>
-                            <td> {{ $row->code }}</td>
-                            <td> {{ $row->name }}</td>
-                           
-                            </td>
+                            <td>{{ $row->city_id }}</td>
+                            <td> {{ $row->state_id }}</td>
+                            <td>{{ $row->name }}</td>
+                            <td>{{ $row->code }}</td>
+                            
                         </tr>
                     </tbody>
                     @endforeach

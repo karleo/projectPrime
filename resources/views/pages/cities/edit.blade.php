@@ -1,7 +1,7 @@
 
 @extends('layouts.admin.main')
 
-@section('page.title', 'Edit Designation')
+@section('page.title', 'Edit City')
 
 @section('page.toolbar')
 
@@ -21,7 +21,7 @@
              </h3>
             </div>
             <!--begin::Form-->
-            <form method='post' action="{{ route('dept.update', $designation->designation_id ) }}" >
+            <form method='post' action="{{ route('cities.update', $city->city_id ) }}" >
                 {{-- @method('PUT') --}}
                 @csrf
              <div class="card-body">
@@ -34,15 +34,15 @@
                </div> --}}
               </div>
               <div class="form-group row">
-               <label  class="col-2 col-form-label">Designation</label>
+               <label  class="col-2 col-form-label">City</label>
                <div class="col-10">
-                <input class="form-control" type="text" name="name" value="{{ $designation->name }}"/>
+                <input class="form-control" type="text" name="name" value="{{ $city->name }}"/>
                </div>
               </div>
               <div class="form-group row">
                <label for="example-search-input" class="col-2 col-form-label">Code</label>
                <div class="col-10">
-                <input class="form-control" type="search" name="code" value="{{ $department->code }}">
+                <input class="form-control" type="search" name="code" value="{{ $city->code }}">
                </div>
               </div>
 

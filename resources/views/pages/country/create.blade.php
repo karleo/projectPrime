@@ -1,7 +1,7 @@
 
 @extends('layouts.admin.main')
 
-@section('page.title', 'Edit Designation')
+@section('page.title', 'Create Countries')
 
 @section('page.toolbar')
 
@@ -21,8 +21,7 @@
              </h3>
             </div>
             <!--begin::Form-->
-            <form method='post' action="{{ route('dept.update', $designation->designation_id ) }}" >
-                {{-- @method('PUT') --}}
+            <form method="post" action="{{route('country.store')}}" class="form-group">
                 @csrf
              <div class="card-body">
               <div class="form-group mb-8">
@@ -34,17 +33,18 @@
                </div> --}}
               </div>
               <div class="form-group row">
-               <label  class="col-2 col-form-label">Designation</label>
+               <label  class="col-2 col-form-label">Name </label>
                <div class="col-10">
-                <input class="form-control" type="text" name="name" value="{{ $designation->name }}"/>
+                <input class="form-control" type="text" name="name" />
                </div>
               </div>
               <div class="form-group row">
                <label for="example-search-input" class="col-2 col-form-label">Code</label>
                <div class="col-10">
-                <input class="form-control" type="search" name="code" value="{{ $department->code }}">
+                <input class="form-control" type="search" name="code" >
                </div>
               </div>
+             
 
              </div>
              <div class="card-footer">
@@ -72,8 +72,4 @@
 @endpush
 
 @push('scripts')
-
-<script>
-    var _csrf_token = "{{ csrf_token() }}";
-</script>
 @endpush
