@@ -12,7 +12,7 @@ class Gender extends Model
     protected $primarykey = "gender_id";
 
     protected $fillable =[
-        'name',
-        'code'
+        'code',
+        'gender'
     ];
 }

@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class EmployeeStatus extends Model
 {
     use HasFactory;
+    protected $primarykey = "employeestatus_id";
+
+    protected $fillable = [
+        'code',
+        'gender'
+    ];
 }
