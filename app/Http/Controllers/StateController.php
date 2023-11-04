@@ -22,9 +22,11 @@ class StateController extends Controller
     {
         $request->validate([
             'name' => 'required',
+            'code' => 'required',
         ]);
 
         $data = State::create([
+            'country_id'=> $request->country_id,
             'name' => $request->name,
             'code' => $request->code,
         ]);

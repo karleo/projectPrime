@@ -77,11 +77,11 @@ Route::get('/country/{country}', [CountryController::class, 'edit'])->name('coun
 Route::post('/country/{country}', [CountryController::class, 'update'])->name('country.update');
 
 //states
-Route::get('/states', [StatesController::class, 'index'])->name('states.index');
-Route::get('/states/create', [StatesController::class, 'create'])->name('states.create');
-Route::post('/states/create', [StatesController::class, 'store'])->name('states.store');
-Route::get('/states/{states}', [StatesController::class, 'edit'])->name('states.edit');
-Route::post('/states/{states}', [StatesController::class, 'update'])->name('states.update');
+Route::get('/states', [StateController::class, 'index'])->name('states.index');
+Route::get('/states/create', [StateController::class, 'create'])->name('states.create');
+Route::post('/states/create', [StateController::class, 'store'])->name('states.store');
+Route::get('/states/{states}', [StateController::class, 'edit'])->name('states.edit');
+Route::post('/states/{states}', [StateController::class, 'update'])->name('states.update');
 
 //Cities
 Route::get('/city', [CityController::class, 'index'])->name('cities.index');

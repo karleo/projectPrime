@@ -33,6 +33,12 @@
                </div> --}}
               </div>
               <div class="form-group row">
+               <label  class="col-2 col-form-label">Country ID </label>
+               <div class="col-10">
+                <input class="form-control" type="text" name="country_id" />
+               </div>
+              </div>
+              <div class="form-group row">
                <label  class="col-2 col-form-label">Name </label>
                <div class="col-10">
                 <input class="form-control" type="text" name="name" />
@@ -41,7 +47,7 @@
               <div class="form-group row">
                <label for="example-search-input" class="col-2 col-form-label">Code</label>
                <div class="col-10">
-                <input class="form-control" type="search" name="code" >
+                <input class="form-control" type="number" name="code" >
                </div>
               </div>
              
