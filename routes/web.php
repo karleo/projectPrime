@@ -1,16 +1,12 @@
 <?php
 
+use App\Http\Controllers\ChoiceController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\DesignationController;
-use App\Http\Controllers\GenderController;
-use App\Http\Controllers\CountryController;
-use App\Http\Controllers\StateController;
-use App\Http\Controllers\CityController;
-use App\Http\Controllers\EmployeeStatusController;
-use Faker\Extension\CountryExtension;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -48,8 +44,17 @@ Route::get('/department/{department}', [DepartmentController::class, 'edit'])->n
 Route::post('/department/{department}', [DepartmentController::class, 'update'])->name('dept.update');
 
 
+//designation
+Route::get('/designation',[DesignationController::class, 'index'])->name('designation.index');
+Route::get('/designation/create',[DesignationController::class, 'create'])->name('designation.create');
+Route::post('/designation/create', [DesignationController::class, 'store'])->name('designation.store');
+Route::get('/designation/{designation}', [DesignationController::class, 'edit'])->name('designation.edit');
+Route::post('/designation/{designation}', [DesignationController::class, 'update'])->name('designation.update');
 
-
+//choice
+Route::get('/choice',[ChoiceController::class, 'index'])->name('choice.index');
+Route::get('/choice/create',[ChoiceController::class, 'create'])->name('choice.create');
+Route::post('/choice/create', [ChoiceController::class, 'store'])->name('choice.store');
 
 
 
