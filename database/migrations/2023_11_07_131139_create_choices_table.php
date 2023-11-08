@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('status');
             $table->string('trucks');
             $table->string('state');
-            $table->date('arrivaldate');
+            $table->dateTime('arrivaldate');
             $table->string('boe');
             $table->string('tranferout');
             $table->string('quantity');
