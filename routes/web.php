@@ -55,6 +55,8 @@ Route::post('/designation/{designation}', [DesignationController::class, 'update
 Route::get('/choice',[ChoiceController::class, 'index'])->name('choice.index');
 Route::get('/choice/create',[ChoiceController::class, 'create'])->name('choice.create');
 Route::post('/choice/create', [ChoiceController::class, 'store'])->name('choice.store');
+Route::get('/choice/{choice}', [ChoiceController::class, 'edit'])->name('choice.edit');
+Route::post('/choice/{choice}', [ChoiceController::class, 'update'])->name('choice.update');
 
 
 

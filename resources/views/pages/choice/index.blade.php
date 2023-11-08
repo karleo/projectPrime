@@ -25,7 +25,7 @@
                 </div>
                 <div class="card-toolbar">
                     <!--begin::Button-->
-                    <a href="" class="btn btn-primary font-weight-bolder">
+                    <a href="{{route('choice.create')}}" class="btn btn-primary font-weight-bolder">
                     <span class="svg-icon svg-icon-md">
                         <!--begin::Svg Icon | path:assets/media/svg/icons/Design/Flatten.svg-->
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -47,53 +47,25 @@
                     <thead>
                         <tr class="fw-bold fs-6 text-gray-800 px-7">
                             <th>Booking</th>
-                            <th>Job</th>
-                            <th>Invoice</th>
                             <th>AWB</th>
                             <th>Pieces</th>
-                            <th>A/B</th>
-                            <th>Reciever</th>
-                            <th>Location</th>
-                            <th>Status</th>
-                            <th>Trucks</th>
                             <th>States</th>
-                            <th>Arrival Date</th>
-                            <th>BOE</th>
-                            <th>Transfer Out</th>
-                            <th>Quantity</th>
-                            <th>Weight</th>
-                            <th>Value</th>
                             <th>Remarks</th>
 
                         </tr>
                     </thead>
-                    @foreach ( $data as $row )
                     <tbody>
+                    @foreach ( $data as $row )
                         <tr>
-                            <td>{{ $row->booking }}</td>
-                            <td> {{ $row->job }}</td>
-                            <td>{{ $row->invoice }}</td>
+                            <td> <a href="{{route ('choice.edit', $row->choice_id)}}"> {{ $row->booking }}</a></td>
                             <td> {{ $row->awb }}</td>
                             <td> {{ $row->pieces }}</td>
-                            <td> {{ $row->ab }}</td>
-                            <td> {{ $row->reciever }}</td>
-                            <td> {{ $row->location }}</td>
-                            <td> {{ $row->status }}</td>
-                            <td> {{ $row->trucks }}</td>
-                            <td> {{ $row->states }}</td>
-                            <td> {{ $row->arrivaldate }}</td>
-                            <td> {{ $row->boe }}</td>
-                            <td> {{ $row->transferout }}</td>
-                            <td> {{ $row->quantity }}</td>
-                            <td> {{ $row->weight }}</td>
-                            <td> {{ $row->value }}</td>
-                            <td> {{ $row->remarks }}</td>
-                            <td> <a href="{{ route('choice.edit', $row->choice_id) }}">Edit </a>
-                                <a href="#"> Delete</a>
-                            </td>
+                            <td> {{ $row->state }}</td>
+                            <td> {{ $row->remarks }}</td>                      
                         </tr>
-                    </tbody>
                     @endforeach
+
+                    </tbody>
                 </table>
 
             </div>

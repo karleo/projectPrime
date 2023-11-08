@@ -9,7 +9,7 @@ class Choice extends Model
 {
     use HasFactory;
 
-    protected $primarykey = "choice_id";
+    protected $primaryKey = "choice_id";
 
     protected $fillable = [
         'booking',
@@ -22,7 +22,7 @@ class Choice extends Model
         'location',
         'status',
         'trucks',
-        'states',
+        'state',
         'arrivaldate',
         'boe',
         'tranferout',

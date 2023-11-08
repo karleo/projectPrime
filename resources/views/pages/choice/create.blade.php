@@ -41,7 +41,7 @@
               <div class="form-group row">
                <label for="example-search-input" class="col-2 col-form-label">Job</label>
                <div class="col-10">
-                <input class="form-control" type="text" name="Job" >
+                <input class="form-control" type="text" name="job" >
                </div>
               </div>
 
@@ -104,7 +104,7 @@
               <div class="form-group row">
                <label  class="col-2 col-form-label">States</label>
                <div class="col-10">
-                <input class="form-control" type="text" name="states" />
+                <input class="form-control" type="text" name="state" />
                </div>
               </div>
 
@@ -125,7 +125,7 @@
               <div class="form-group row">
                <label  class="col-2 col-form-label">Transfer Out</label>
                <div class="col-10">
-                <input class="form-control" type="text" name="transferout" />
+                <input class="form-control" type="text" name="tranferout" />
                </div>
               </div>
 
