@@ -183,4 +183,8 @@
 @endpush
 
 @push('scripts')
+
+<script>
+    var _csrf_token = "{{ csrf_token() }}";
+</script>
 @endpush

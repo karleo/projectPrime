@@ -52,6 +52,7 @@
                                     <th>Pieces</th>
                                     <th>States</th>
                                     <th>Remarks</th>
+                                    <th>Action</th>
                                 </tr>
                             </tr>
                             </thead>
@@ -63,6 +64,9 @@
                                     <td> {{ $row->pieces }}</td>
                                     <td> {{ $row->state }}</td>
                                     <td> {{ $row->remarks }}</td>
+                                    <td><a href="{{route('choice.edit', $row->choice_id)}}">Edit</a>
+                                        <a href="#"> Delete</a>
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>

@@ -164,7 +164,7 @@
                </div>
                <div class="col-10">
                 <button type="submit" class="btn btn-success mr-2">Submit</button>
-                <button type="reset" class="btn btn-secondary">Cancel</button>
+                <button type="reset" class="btn btn-secondary" >Cancel</button>
                </div>
               </div>
              </div>
