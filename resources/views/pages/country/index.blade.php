@@ -1,6 +1,6 @@
 @extends('layouts.admin.main')
 
-@section('page.title', 'Designation')
+@section('page.title', 'Country')
 
 @section('page.toolbar')
 
@@ -23,7 +23,7 @@
                 </div>
             <div class="card-toolbar">
                 <!--begin::Button-->
-                <a href="{{ route('designation.create') }}" class="btn btn-primary font-weight-bolder">
+                <a href="{{ route('country.create') }}" class="btn btn-primary font-weight-bolder">
                 <span class="svg-icon svg-icon-md">
                     <!--begin::Svg Icon | path:assets/media/svg/icons/Design/Flatten.svg-->
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -47,7 +47,7 @@
                             <thead>
                             <tr>
                                 <tr class="fw-bold fs-6 text-gray-800 px-7">
-                                    <th>Name</th>
+                                    <th>Country</th>
                                     <th>Code</th>
                                     <th>Action</th>
                                 </tr>
@@ -58,7 +58,7 @@
                                 <tr>
                                     <td>{{ $row->name }}</td>
                                     <td> {{ $row->code }}</td>
-                                    <td> <a href="{{ route('designation.edit', $row->designation_id) }}">Edit </a>
+                                    <td> <a href="{{ route('country.edit', $row->country_id) }}">Edit </a>
                                         <a href="#"> Delete</a>
                                     </td>
                                 </tr>

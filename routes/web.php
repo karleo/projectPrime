@@ -1,11 +1,13 @@
 <?php
 
 use App\Http\Controllers\ChoiceController;
+use App\Http\Controllers\CountryController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\DesignationController;
+use App\Http\Controllers\EmployeeStatusController;
 
 
 /*
@@ -58,5 +60,19 @@ Route::post('/choice/create', [ChoiceController::class, 'store'])->name('choice.
 Route::get('/choice/{choice}', [ChoiceController::class, 'edit'])->name('choice.edit');
 Route::post('/choice/{choice}', [ChoiceController::class, 'update'])->name('choice.update');
 
+
+//employeestatus
+Route::get('/employeestatus',[EmployeeStatusController::class, 'index'])->name('employeestatus.index');
+Route::get('/employeestatus/create',[EmployeeStatusController::class, 'create'])->name('employeestatus.create');
+Route::post('/employeestatus/create', [EmployeeStatusController::class, 'store'])->name('employeestatus.store');
+Route::get('/employeestatus/{employeestatus}', [EmployeeStatusController::class, 'edit'])->name('employeestatus.edit');
+Route::post('/employeestatus/{employeestatus}', [EmployeeStatusController::class, 'update'])->name('employeestatus.update');
+
+//country
+Route::get('/country',[CountryController::class, 'index'])->name('country.index');
+Route::get('/country/create',[CountryController::class, 'create'])->name('country.create');
+Route::post('/country/create', [CountryController::class, 'store'])->name('country.store');
+Route::get('/country/{employcountryeestatus}', [CountryController::class, 'edit'])->name('country.edit');
+Route::post('/country/{country}', [CountryController::class, 'update'])->name('country.update');
 
 

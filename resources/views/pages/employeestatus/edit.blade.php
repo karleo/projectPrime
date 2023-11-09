@@ -1,7 +1,7 @@
 
 @extends('layouts.admin.main')
 
-@section('page.title', 'Create Department')
+@section('page.title', 'Edit Employee Status')
 
 @section('page.toolbar')
 
@@ -16,23 +16,13 @@
 
         <div class="card card-custom">
             <div class="card-header">
-
              <h3 class="card-title">
-             @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <h4>Errors found when submitting form.</h4>
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
-             </h3>
 
+             </h3>
             </div>
             <!--begin::Form-->
-            <form method="post" action="{{ route('designation.store') }}" class="form-group">
+            <form method='post' action="{{ route('employeestatus.update', $employeestatus->employee_statuses_id ) }}" >
+                {{-- @method('PUT') --}}
                 @csrf
              <div class="card-body">
               <div class="form-group mb-8">
@@ -44,15 +34,15 @@
                </div> --}}
               </div>
               <div class="form-group row">
-               <label  class="col-2 col-form-label">Designation</label>
+               <label  class="col-2 col-form-label">Employee Status</label>
                <div class="col-10">
-                <input class="form-control" type="text" name="name" />
+                <input class="form-control" type="text" name="name" value="{{ $employeestatus->name }}"/>
                </div>
               </div>
               <div class="form-group row">
                <label for="example-search-input" class="col-2 col-form-label">Code</label>
                <div class="col-10">
-                <input class="form-control" type="text" name="code" >
+                <input class="form-control" type="search" name="code" value="{{ $employeestatus->code }}">
                </div>
               </div>
 
@@ -82,4 +72,8 @@
 @endpush
 
 @push('scripts')
+
+<script>
+    var _csrf_token = "{{ csrf_token() }}";
+</script>
 @endpush

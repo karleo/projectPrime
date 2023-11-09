@@ -1,7 +1,7 @@
 
 @extends('layouts.admin.main')
 
-@section('page.title', 'Edit Department')
+@section('page.title', 'Edit Designation')
 
 @section('page.toolbar')
 
@@ -34,7 +34,7 @@
                </div> --}}
               </div>
               <div class="form-group row">
-               <label  class="col-2 col-form-label">Department</label>
+               <label  class="col-2 col-form-label">Designation</label>
                <div class="col-10">
                 <input class="form-control" type="text" name="name" value="{{ $designation->name }}"/>
                </div>
