@@ -10,7 +10,7 @@ use App\Http\Controllers\CountryController;
 use App\Http\Controllers\StateController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\EmployeeStatusController;
-use Faker\Extension\CountryExtension;
+use App\Http\Controllers\EmployeeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,9 +49,14 @@ Route::post('/department/{department}', [DepartmentController::class, 'update'])
 
 
 
-
-
-
+Route::middleware('auth')->prefix('employee')->group(function () {
+    Route::get('',[EmployeeController::class,'index'])->name('employee.index');
+    Route::get('/create',[EmployeeController::class,'create'])->name('employee.create');
+    Route::post('/create',[EmployeeController::class,'store'])->name('employee.store');
+    Route::get('/{employee}',[EmployeeController::class,'edit'])->name('employee.edit');
+    Route::post('/{employee}',[EmployeeController::class,'update'])->name('employee.update');
+    Route::delete('/{employee}',[EmployeeController::class,'delete'])->name('employee.delete');
+});
 
 Route::get('/choice', function(){
     return view('pages.choice.index');

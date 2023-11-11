@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('status');
             $table->string('truck')->nullable();
             $table->unsignedBigInteger('state');
-            $table->datetimes('arrival_date');
+            $table->dateTime('arrival_date');
             $table->string('boe')->nullable();
             $table->string('transfer_out')->nullable();
             $table->string('weight')->nullable();

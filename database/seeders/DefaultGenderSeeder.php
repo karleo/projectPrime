@@ -16,17 +16,14 @@ class DefaultGenderSeeder extends Seeder
         //
         $defaults = [
             [
-                'gender' => 'Male',
-                'code' => 'male'
+                'name'=> 'Male',
             ],
             [
-                'gender' => 'female',
-                'code' => 'female'
+                'name'=> 'Female',
             ],
             [
-                'gender' => 'I dont want to know',
-                'code' => 'idk'
-            ],
+                'name'=> 'I dont want to mention',
+            ]
         ];
 
         Gender::query()->truncate();
@@ -34,7 +31,7 @@ class DefaultGenderSeeder extends Seeder
         if ( !empty($defaults) ) {
             foreach($defaults as $row) {
                 Gender::create( $row );
-            }
+                }
         }
     }
 }

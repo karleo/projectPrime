@@ -50,7 +50,7 @@
                     <h4 class="menu-text">System</h4>
                     <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
                 </li>
-                <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                <li class="menu-item menu-item-submenu  {{ request()->routeIs('employee.*') ? 'menu-item-open' : ''}}" aria-haspopup="true" data-menu-toggle="hover">
                     <a href="javascript:;" class="menu-link menu-toggle">
                         <span class="svg-icon menu-icon">
                             <span class="svg-icon svg-icon-primary svg-icon-2x"><!--begin::Svg Icon | path:D:\xampp\htdocs\keenthemes\legacy\keen\theme\demo1\dist/../src/media/svg/icons\Code\Settings4.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -72,8 +72,8 @@
                                     <span class="menu-text">Employee</span>
                                 </span>
                             </li>
-                            <li class="menu-item {{ request()->routeIs('dept.index') ? 'menu-item-active' : ''}}"aria-haspopup="true">
-                                <a href="{{ route('dept.index') }}"  class="menu-link">
+                            <li class="menu-item {{ request()->routeIs('employee.index') ? 'menu-item-active' : ''}}"aria-haspopup="true">
+                                <a href="{{ route('employee.index') }}"  class="menu-link">
                                     <i class="menu-bullet menu-bullet-line">
                                         <span></span>
                                     </i>
