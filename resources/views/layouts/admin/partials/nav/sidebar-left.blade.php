@@ -30,7 +30,7 @@
         <div id="kt_aside_menu" class="aside-menu my-4" data-menu-vertical="1" data-menu-scroll="1" data-menu-dropdown-timeout="500">
             <!--begin::Menu Nav-->
             <ul class="menu-nav">
-                <li class="menu-item menu-item-active" aria-haspopup="true">
+                <li class="menu-item menu-item" aria-haspopup="true">
                     <a href="{{ route('admin.dashboard') }}" class="menu-link">
                         <span class="svg-icon menu-icon">
                             <!--begin::Svg Icon | path:assets/media/svg/icons/Design/Layers.svg-->
@@ -85,7 +85,7 @@
                     </div>
                 </li>
 
-                <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                <li class="menu-item menu-item-submenu {{ request()->routeIs('dept.*','choice.*') ? 'menu-item-open' : ''}}" aria-haspopup="true" data-menu-toggle="hover">
                     <a href="javascript:;" class="menu-link menu-toggle">
                         <span class="svg-icon menu-icon svg-icon-primary svg-icon-2x">
                             <!--begin::Svg Icon | path:D:\xampp\htdocs\keenthemes\legacy\keen\theme\demo1\dist/../src/media/svg/icons\General\User.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -106,7 +106,7 @@
                                     <span class="menu-text">Maintenance</span>
                                 </span>
                             </li>
-                            <li class="menu-item" aria-haspopup="true">
+                            <li class="menu-item {{ request()->routeIs('choice.index') ? 'menu-item-active' : ''}}" aria-haspopup="true">
                                 <a href="{{ route('dept.index') }}"  class="menu-link">
                                     <i class="menu-bullet menu-bullet-line">
                                         <span></span>
@@ -162,7 +162,7 @@
                                     <span class="menu-text">Gender</span>
                                 </a>
                             </li>
-                            <li class="menu-item" aria-haspopup="true">
+                            <li class="menu-item {{ request()->routeIs('choice.index') ? 'menu-item-active' : ''}}" aria-haspopup="true">
                                 <a href="{{route  ('choice.index')}}" class="menu-link">
                                     <i class="menu-bullet menu-bullet-line">
                                         <span></span>
