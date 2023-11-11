@@ -23,9 +23,8 @@ class ChoiceController extends Controller
     public function store (Request $request)
     {
         $request->validate([
-            'booking' => 'required',
-           
-           
+            'booking' => 'required|unique:choices,booking,except,choice_id',
+            'arrivaldate' => 'required'
         ]);
 
         $data = Choice::create([
@@ -51,11 +50,11 @@ class ChoiceController extends Controller
 
         return redirect()->route('choice.index')->with([
             'alert' => [
-                 'type'  => 'success', 
+                 'type'  => 'success',
                  'message' => 'Choice Field Added Successfully'
             ]
             ]);
-        
+
     }
     public function edit(Choice $choice){
 
@@ -83,13 +82,13 @@ class ChoiceController extends Controller
         $choice->value = $request->value;
         $choice->remarks = $request->remarks;
         $choice->save();
-        
+
         return redirect()->route('choice.index')->with([
             'alert' => [
-                 'type'  => 'success', 
+                 'type'  => 'success',
                  'message' => 'Choice Field Updated Successfully'
             ]
             ]);
     }
-   
+
 }

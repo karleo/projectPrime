@@ -36,6 +36,9 @@
                <label  class="col-2 col-form-label">Booking</label>
                <div class="col-10">
                 <input class="form-control" type="text" name="booking" />
+                @if($errors->has('booking'))
+                    <div class="alert alert-danger">{{ $errors->first('booking') }}</div>
+                @endif
                </div>
               </div>
               <div class="form-group row">
@@ -112,6 +115,9 @@
                <label  class="col-2 col-form-label">Arrival Date</label>
                <div class="col-10">
                 <input class="form-control" type="datetime-local" name="arrivaldate" />
+                    @if($errors->has('arrivaldate'))
+                        <div class="alert alert-danger">{{ $errors->first('arrivaldate') }}</div>
+                    @endif
                </div>
               </div>
 
@@ -132,7 +138,7 @@
               <div class="form-group row">
                <label  class="col-2 col-form-label">Quantity</label>
                <div class="col-10">
-                <input class="form-control" type="text" name="quantity" />
+                <input class="form-control" type="number" name="quantity" />
                </div>
               </div>
 
@@ -153,7 +159,7 @@
               <div class="form-group row">
                <label  class="col-2 col-form-label">Remarks</label>
                <div class="col-10">
-                <input class="form-control" type="text" name="remarks" />
+                <textarea class="form-control" name="remarks"> </textarea>
                </div>
               </div>
 
@@ -164,7 +170,7 @@
                </div>
                <div class="col-10">
                 <button type="submit" class="btn btn-success mr-2">Submit</button>
-                <button type="reset" class="btn btn-secondary" >Cancel</button>
+                <button type="reset" class="btn btn-secondary">Clear</button>
                </div>
               </div>
              </div>
