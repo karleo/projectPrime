@@ -69,20 +69,20 @@
                         <ul class="menu-subnav">
                             <li class="menu-item menu-item-parent" aria-haspopup="true">
                                 <span class="menu-link">
-                                    <span class="menu-text">Bulk Shipment</span>
+                                    <span class="menu-text">Employee</span>
                                 </span>
                             </li>
-                            <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                                <a href="javascript:;" class="menu-link menu-toggle">
-                                    <i class="menu-bullet menu-bullet-dot">
+                            <li class="menu-item {{ request()->routeIs('dept.index') ? 'menu-item-active' : ''}}"aria-haspopup="true">
+                                <a href="{{ route('dept.index') }}"  class="menu-link">
+                                    <i class="menu-bullet menu-bullet-line">
                                         <span></span>
                                     </i>
-                                    <span class="menu-text">List of Sipment</span>
-                                    <i class="menu-arrow"></i>
+                                    <span class="menu-text">List of Employee</span>
                                 </a>
                             </li>
                         </ul>
                     </div>
+
                 </li>
 
                 <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
@@ -114,7 +114,7 @@
                     </div>
                 </li>
 
-                <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                <li class="menu-item menu-item-submenu {{ request()->routeIs('dept.*') ? 'menu-item-open' : ''}}" aria-haspopup="true" data-menu-toggle="hover">
                     <a href="javascript:;" class="menu-link menu-toggle">
                         <span class="svg-icon menu-icon svg-icon-primary svg-icon-2x">
                             <!--begin::Svg Icon | path:D:\xampp\htdocs\keenthemes\legacy\keen\theme\demo1\dist/../src/media/svg/icons\General\User.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -135,7 +135,7 @@
                                     <span class="menu-text">Maintenance</span>
                                 </span>
                             </li>
-                            <li class="menu-item" aria-haspopup="true">
+                            <li class="menu-item {{ request()->routeIs('dept.index') ? 'menu-item-active' : ''}}"aria-haspopup="true">
                                 <a href="{{ route('dept.index') }}"  class="menu-link">
                                     <i class="menu-bullet menu-bullet-line">
                                         <span></span>
