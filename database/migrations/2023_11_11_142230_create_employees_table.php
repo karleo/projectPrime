@@ -22,6 +22,7 @@ return new class extends Migration
             $table->date('birth_date');
             $table->string('email_add')->nullable();
             $table->string('contact_no')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id('department_id');
             $table->string('name');
             $table->string('code')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
