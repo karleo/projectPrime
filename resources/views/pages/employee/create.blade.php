@@ -1,4 +1,3 @@
-
 @extends('layouts.admin.main')
 
 @section('page.title', 'Add Employee')
@@ -13,6 +12,7 @@
 <div class="d-flex flex-column-fluid">
     <!--begin::Container-->
     <div class="container">
+
 
         <div class="card card-custom">
             <div class="card-header">
@@ -92,6 +92,7 @@
         
         </div>
 
+    
     </div>
     <!--end::Container-->
 </div>
@@ -101,6 +102,5 @@
 @push('styles')
 @endpush
 
-@push('scripts')
- 
+@push('scripts') 
 @endpush

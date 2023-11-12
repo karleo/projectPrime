@@ -767,7 +767,7 @@
         <!--begin::Toggle-->
         <div class="topbar-item" data-toggle="dropdown" data-offset="10px,0px">
             <div class="btn btn-icon btn-clean btn-dropdown btn-lg">
-                <img class="h-20px w-20px rounded-sm" src="assets/media/svg/flags/226-united-states.svg" alt="" />
+                <img class="h-20px w-20px rounded-sm" src="{{asset('media/svg/flags/226-united-states.svg')}}" alt="" />
             </div>
         </div>
         <!--end::Toggle-->
@@ -779,7 +779,7 @@
                 <li class="navi-item">
                     <a href="#" class="navi-link">
                                             <span class="symbol symbol-20 mr-3">
-                                                <img src="assets/media/svg/flags/226-united-states.svg" alt="" />
+                                                <img src="{{ asset('media/svg/flags/226-united-states.svg')}}" alt="" />
                                             </span>
                         <span class="navi-text">English</span>
                     </a>
@@ -789,42 +789,12 @@
                 <li class="navi-item active">
                     <a href="#" class="navi-link">
                                             <span class="symbol symbol-20 mr-3">
-                                                <img src="assets/media/svg/flags/128-spain.svg" alt="" />
+                                                <img src="{{asset('media/svg/flags/128-spain.svg')}}" alt="" />
                                             </span>
                         <span class="navi-text">Spanish</span>
                     </a>
                 </li>
-                <!--end::Item-->
-                <!--begin::Item-->
-                <li class="navi-item">
-                    <a href="#" class="navi-link">
-                                            <span class="symbol symbol-20 mr-3">
-                                                <img src="assets/media/svg/flags/162-germany.svg" alt="" />
-                                            </span>
-                        <span class="navi-text">German</span>
-                    </a>
-                </li>
-                <!--end::Item-->
-                <!--begin::Item-->
-                <li class="navi-item">
-                    <a href="#" class="navi-link">
-                                            <span class="symbol symbol-20 mr-3">
-                                                <img src="assets/media/svg/flags/063-japan.svg" alt="" />
-                                            </span>
-                        <span class="navi-text">Japanese</span>
-                    </a>
-                </li>
-                <!--end::Item-->
-                <!--begin::Item-->
-                <li class="navi-item">
-                    <a href="#" class="navi-link">
-                                            <span class="symbol symbol-20 mr-3">
-                                                <img src="assets/media/svg/flags/195-france.svg" alt="" />
-                                            </span>
-                        <span class="navi-text">French</span>
-                    </a>
-                </li>
-                <!--end::Item-->
+                <!--end::Item--> 
             </ul>
             <!--end::Nav-->
         </div>
@@ -834,7 +804,7 @@
     <!--begin::User-->
     <div class="topbar-item ml-4">
         <div class="btn btn-icon btn-light-primary h-40px w-40px p-0" id="kt_quick_user_toggle">
-            <img src="assets/media/svg/avatars/004-boy-1.svg" class="h-30px align-self-end" alt="" />
+            <img src="{{asset('media/svg/avatars/004-boy-1.svg')}}" class="h-30px align-self-end" alt="" />
         </div>
         <!--
 <div class="btn btn-icon w-auto btn-clean d-flex align-items-center btn-lg px-2" id="kt_quick_user_toggle">
