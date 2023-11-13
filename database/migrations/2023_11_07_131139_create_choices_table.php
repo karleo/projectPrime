@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('invoice')->nullable();
             $table->string('awb')->nullable();
             $table->string('pieces')->nullable();
-            $table->string('ab')->nullable();
+            $table->unsignedInteger('ab_id')->nullable();
             $table->string('reciever')->nullable();
             $table->string('location')->nullable();
             $table->string('status')->nullable();
