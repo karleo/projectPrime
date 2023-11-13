@@ -1,7 +1,7 @@
 
 @extends('layouts.admin.main')
 
-@section('page.title', 'Edit Country')
+@section('page.title', 'Edit State')
 
 @section('page.toolbar')
 
@@ -21,7 +21,7 @@
              </h3>
             </div>
             <!--begin::Form-->
-            <form method='post' action="{{ route('country.update', $country->country_id ) }}" >
+            <form method='post' action="{{ route('state.update', $state->state_id ) }}" >
                 {{-- @method('PUT') --}}
                 @csrf
              <div class="card-body">
@@ -33,16 +33,25 @@
                 </div>
                </div> --}}
               </div>
+
               <div class="form-group row">
-               <label  class="col-2 col-form-label">Country</label>
+               <label  class="col-2 col-form-label">country</label>
                <div class="col-10">
-                <input class="form-control" type="text" name="name" value="{{ $country->name }}"/>
+                <input class="form-control" type="text" name="country_id" value="{{ $state->country_id }}"/>
                </div>
               </div>
+
+              <div class="form-group row">
+               <label for="example-search-input" class="col-2 col-form-label">Name</label>
+               <div class="col-10">
+                <input class="form-control" type="text" name="name" value="{{ $state->name }}">
+               </div>
+              </div>
+
               <div class="form-group row">
                <label for="example-search-input" class="col-2 col-form-label">Code</label>
                <div class="col-10">
-                <input class="form-control" type="search" name="code" value="{{ $country->code }}">
+                <input class="form-control" type="text" name="code" value="{{ $state->code }}">
                </div>
               </div>
 

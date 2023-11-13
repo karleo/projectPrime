@@ -1,7 +1,7 @@
 
 @extends('layouts.admin.main')
 
-@section('page.title', 'Edit Country')
+@section('page.title', 'Create State')
 
 @section('page.toolbar')
 
@@ -16,33 +16,37 @@
 
         <div class="card card-custom">
             <div class="card-header">
-             <h3 class="card-title">
 
+             <h3 class="card-title">
              </h3>
+
             </div>
             <!--begin::Form-->
-            <form method='post' action="{{ route('country.update', $country->country_id ) }}" >
-                {{-- @method('PUT') --}}
+            <form method="post" action="{{ route('state.store') }}" class="form-group">
                 @csrf
              <div class="card-body">
               <div class="form-group mb-8">
-               {{-- <div class="alert alert-custom alert-default" role="alert">
-                <div class="alert-icon"><i class="flaticon-warning text-primary"></i></div>
-                <div class="alert-text">
-                 Here are examples of <code>.form-control</code> applied to each textual HTML5 input type:
-                </div>
-               </div> --}}
+
               </div>
               <div class="form-group row">
                <label  class="col-2 col-form-label">Country</label>
                <div class="col-10">
-                <input class="form-control" type="text" name="name" value="{{ $country->name }}"/>
+                <input class="form-control" type="text" name="country_id" />
+               </div>
+              </div> 
+
+            </div>
+
+              <div class="form-group row">
+               <label  class="col-2 col-form-label">Name</label>
+               <div class="col-10">
+                <input class="form-control" type="text" name="name" />
                </div>
               </div>
               <div class="form-group row">
                <label for="example-search-input" class="col-2 col-form-label">Code</label>
                <div class="col-10">
-                <input class="form-control" type="search" name="code" value="{{ $country->code }}">
+                <input class="form-control" type="text" name="code" >
                </div>
               </div>
 
@@ -72,8 +76,4 @@
 @endpush
 
 @push('scripts')
-
-<script>
-    var _csrf_token = "{{ csrf_token() }}";
-</script>
 @endpush
