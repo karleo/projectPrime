@@ -9,7 +9,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\DesignationController;
 use App\Http\Controllers\EmployeeStatusController;
-
+use App\Http\Controllers\StateController;
 
 /*
 |--------------------------------------------------------------------------
@@ -73,7 +73,21 @@ Route::post('/employeestatus/{employeestatus}', [EmployeeStatusController::class
 Route::get('/country',[CountryController::class, 'index'])->name('country.index');
 Route::get('/country/create',[CountryController::class, 'create'])->name('country.create');
 Route::post('/country/create', [CountryController::class, 'store'])->name('country.store');
-Route::get('/country/{employcountryeestatus}', [CountryController::class, 'edit'])->name('country.edit');
+Route::get('/country/{country}', [CountryController::class, 'edit'])->name('country.edit');
 Route::post('/country/{country}', [CountryController::class, 'update'])->name('country.update');
 
+
+//city
+Route::get('/city',[CityController::class, 'index'])->name('city.index');
+Route::get('/city/create',[CityController::class, 'create'])->name('city.create');
+Route::post('/city/create', [CityController::class, 'store'])->name('city.store');
+Route::get('/city/{city}', [CityController::class, 'edit'])->name('city.edit');
+Route::post('/city/{city}', [CityController::class, 'update'])->name('city.update');
+
+//state
+Route::get('/state',[StateController::class, 'index'])->name('state.index');
+Route::get('/state/create',[StateController::class, 'create'])->name('state.create');
+Route::post('/state/create', [StateController::class, 'store'])->name('state.store');
+Route::get('/state/{state}', [StateController::class, 'edit'])->name('state.edit');
+Route::post('/state/{state}', [StateController::class, 'update'])->name('state.update');
 
