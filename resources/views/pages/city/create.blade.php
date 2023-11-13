@@ -17,8 +17,17 @@
         <div class="card card-custom">
             <div class="card-header">
              <h3 class="card-title">
-
-             </h3>
+             </h3>         
+             @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <h4>Errors found when submitting form.</h4>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
             </div>
             <!--begin::Form-->
             <form method="post" action="{{ route('city.store') }}" class="form-group">
@@ -32,6 +41,19 @@
                 </div>
                </div> --}}
               </div>
+
+              <div class="form-group row">
+               <label  class="col-2 col-form-label">State ID</label>
+               <div class="col-10">
+               <select class="form-control" data-control="select2" name="state_id" >
+               @foreach($state as $row)
+                    <option value="{{$row->state_id}}">{{$row->name}}</option>|
+                @endforeach
+                </select>
+                <!-- <input class="form-control" type="text" name="state_id" /> -->
+               </div>
+              </div>
+
               <div class="form-group row">
                <label  class="col-2 col-form-label">City</label>
                <div class="col-10">

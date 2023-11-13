@@ -48,7 +48,7 @@
                             <thead>
                             <tr>
                                 <tr class="fw-bold fs-6 text-gray-800 px-7">
-                                    <th>State ID</th>
+                                    <th>State Name</th>
                                     <th>City</th>
                                     <th>Code</th>
                                     <th>Action</th>
@@ -58,9 +58,10 @@
                             <tbody>
                             @foreach($data as $row)
                                 <tr>
+                                    <td>{{ $row->state->name}}</td>
                                     <td>{{ $row->name }}</td>
                                     <td> {{ $row->code }}</td>
-                                    <td> <a href="{{ route('country.edit', $row->country_id) }}">Edit </a>
+                                    <td> <a href="{{ route('city.edit', $row->city_id) }}">Edit </a>
                                         <a href="#"> Delete</a>
                                     </td>
                                 </tr>

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\State;
 use Illuminate\Http\Request;
-
+use App\Models\Country;
 
 
 class StateController extends Controller
@@ -13,13 +13,15 @@ class StateController extends Controller
     public function index()
     {
         $data = State::all();
+       
         return view('pages.state.index',compact('data'));
 
     }
 
     public function create(Request $request)
-    {
-        return view('pages.state.create');
+    {   
+        $country= Country::all();
+        return view('pages.state.create',compact('country'));
     }
 
     public function store(Request $request)
@@ -33,7 +35,6 @@ class StateController extends Controller
 
         $data = State::create([
             'country_id' => $request->country_id,
-
             'name' => $request->name,
             'code' => $request->code,
 

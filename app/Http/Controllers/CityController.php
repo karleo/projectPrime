@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\City;
 use Illuminate\Http\Request;
+use App\Models\State;
 
 
 
@@ -18,17 +19,21 @@ class CityController extends Controller
     }
 
     public function create(Request $request)
-    {
-        return view('pages.city.create');
+    {   
+        $state = State::all();
+        return view('pages.city.create',compact('state'));
     }
 
     public function store(Request $request)
     {
         $request->validate([
+            'state_id' => 'required',
             'name' => 'required',
+            'code' => 'required',
         ]);
 
         $data = City::create([
+            'state_id'=> $request->state_id,
             'name' => $request->name,
             'code' => $request->code,
         ]);
@@ -48,7 +53,7 @@ class CityController extends Controller
     }
 
     public function update(Request $request, City $city)
-    {
+    {   $city->state_id=$request->state_id;
         $city->name = $request->name;
         $city->code = $request->code;
         $city->save();

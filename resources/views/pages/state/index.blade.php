@@ -47,7 +47,7 @@
                             <thead>
                             <tr>
                                 <tr class="fw-bold fs-6 text-gray-800 px-7">
-                                    <th>Country ID</th>
+                                    <th>Country Name</th>
                                     <th>Name</th>
                                     <th>Code</th>
                                     <th>Action</th>
@@ -58,7 +58,7 @@
                             @foreach($data as $row)
                                 <tr>
                              
-                                    <td>{{ $row->country_id }}</td>
+                                    <td>{{ $row->country->name }}</td>
                                     <td>{{ $row->name }}</td>
                                     <td> {{ $row->code }}</td>
                                     <td> <a href="{{ route('state.edit', $row->state_id) }}">Edit </a>

@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Country extends Model
 {
     use HasFactory;
-    protected $primaryKey = "country_id";
+    
+    protected $primaryKey = 'country_id';
 
     protected $fillable =[
         'name',

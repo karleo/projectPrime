@@ -19,7 +19,16 @@
 
              <h3 class="card-title">
              </h3>
-
+             @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <h4>Errors found when submitting form.</h4>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
             </div>
             <!--begin::Form-->
             <form method="post" action="{{ route('state.store') }}" class="form-group">
@@ -31,7 +40,12 @@
               <div class="form-group row">
                <label  class="col-2 col-form-label">Country</label>
                <div class="col-10">
-                <input class="form-control" type="text" name="country_id" />
+                <select class="form-control" data-control="select2" name="country_id" >
+                @foreach($country as $row)
+                    <option value="{{$row->country_id}}">{{$row->name}}</option>|
+                @endforeach
+                </select>
+                <!-- <input class="form-control" type="text" name="country_id" /> -->
                </div>
               </div> 
 
