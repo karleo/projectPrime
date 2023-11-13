@@ -1,10 +1,6 @@
 @extends('layouts.admin.main')
 
-<<<<<<< HEAD
-@section('page.title', 'Choice')
-=======
-@section('page.title', 'All Shipment of Choice')
->>>>>>> develop
+@section('page.title', 'Employee')
 
 @section('page.toolbar')
 
@@ -27,11 +23,7 @@
                 </div>
             <div class="card-toolbar">
                 <!--begin::Button-->
-<<<<<<< HEAD
-                <a href="{{ route('choice.create') }}" class="btn btn-primary font-weight-bolder">
-=======
-                <a href="" class="btn btn-primary font-weight-bolder">
->>>>>>> develop
+                <a href="{{ route('employee.create') }}" class="btn btn-primary font-weight-bolder">
                 <span class="svg-icon svg-icon-md">
                     <!--begin::Svg Icon | path:assets/media/svg/icons/Design/Flatten.svg-->
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -55,44 +47,23 @@
                             <thead>
                             <tr>
                                 <tr class="fw-bold fs-6 text-gray-800 px-7">
-<<<<<<< HEAD
-                                    <th>Booking</th>
-                                    <th>AWB</th>
-                                    <th>Pieces</th>
-                                    <th>States</th>
-                                    <th>Remarks</th>
-=======
-                                    <th>BOOKING</th>
-                                    <th>JOB</th>
->>>>>>> develop
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Department</th>
                                     <th>Action</th>
                                 </tr>
                             </tr>
                             </thead>
                             <tbody>
-<<<<<<< HEAD
                             @foreach($data as $row)
                                 <tr>
-                                    <td> <a href="{{route ('choice.edit', $row->choice_id)}}"> {{ $row->booking }}</a></td>
-                                    <td> {{ $row->awb }}</td>
-                                    <td> {{ $row->pieces }}</td>
-                                    <td> {{ $row->state }}</td>
-                                    <td> {{ $row->remarks }}</td>
-                                    <td><a href="{{route('choice.edit', $row->choice_id)}}">Edit</a>
-                                        <a href="#"> Delete</a>
+                                    <td>{{ $row->first_name }}</td>
+                                    <td> {{ $row->last_name }}</td>
+                                    <td> {{ $row->department->name }}</td>
+                                    <td>  
                                     </td>
                                 </tr>
                             @endforeach
-=======
-                            {{-- @foreach($data as $row) --}}
-                                <tr>
-                                    <td>PLNTO0012358</td>
-                                    <td> </td>
-                                    <td>
-                                    </td>
-                                </tr>
-                            {{-- @endforeach --}}
->>>>>>> develop
                             </tbody>
                         </table>
                     </div>

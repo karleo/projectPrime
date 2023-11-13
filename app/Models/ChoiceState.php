@@ -4,13 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Department extends Model
+class ChoiceState extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory;
 
-    protected $primaryKey = "department_id";
+    protected $primaryKey = 'choice_state_id';
 
     protected $fillable = [
         'name',

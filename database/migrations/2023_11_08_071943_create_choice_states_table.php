@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('departments', function (Blueprint $table) {
-            $table->id('department_id');
+        Schema::create('choice_states', function (Blueprint $table) {
+            $table->id('choice_state_id');
             $table->string('name');
             $table->string('code')->nullable();
-            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -25,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('departments');
+        Schema::dropIfExists('choice_states');
     }
 };
