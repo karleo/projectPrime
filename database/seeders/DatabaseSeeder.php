@@ -20,12 +20,9 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call([
             DefaultUserSeeder::class,
-<<<<<<< HEAD
-=======
             DefaultDepartmentSeeder::class,
             DefaultGenderSeeder::class,
             DefaultPermissionSeeder::class,
->>>>>>> develop
         ]);
     }
 }
