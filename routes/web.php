@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\EmployeeController;
-
+use App\Http\Controllers\CountryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -51,6 +51,17 @@ Route::middleware('auth')->prefix('employee')->group(function () {
     Route::post('/{employee}',[EmployeeController::class,'update'])->name('employee.update');
     Route::delete('/{employee}',[EmployeeController::class,'destroy'])->name('employee.delete');
 });
+
+
+
+Route::middleware('auth')->prefix('country')->group(function () {
+    Route::get('',[CountryController::class,'index'])->name('country.index');
+    Route::get('/create',[CountryController::class,'create'])->name('country.create');
+    Route::post('/create',[CountryController::class,'store'])->name('country.store');
+    Route::get('/{country}',[CountryController::class,'edit'])->name('country.edit');
+    Route::post('/{country}',[CountryController::class,'update'])->name('country.update');    
+});
+
 
 Route::get('/choice', function(){
     return view('pages.choice.index');
