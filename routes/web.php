@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\CountryController;
+use App\Http\Controllers\StateController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -59,7 +60,15 @@ Route::middleware('auth')->prefix('country')->group(function () {
     Route::get('/create',[CountryController::class,'create'])->name('country.create');
     Route::post('/create',[CountryController::class,'store'])->name('country.store');
     Route::get('/{country}',[CountryController::class,'edit'])->name('country.edit');
-    Route::post('/{country}',[CountryController::class,'update'])->name('country.update');    
+    Route::post('/{country}',[CountryController::class,'update'])->name('country.update');
+});
+
+Route::middleware('auth')->prefix('state')->group(function () {
+    Route::get('',[StateController::class,'index'])->name('state.index');
+    Route::get('/create',[StateController::class,'create'])->name('state.create');
+    Route::post('/create',[StateController::class,'store'])->name('state.store');
+    Route::get('/{state}',[StateController::class,'edit'])->name('state.edit');
+    Route::post('/{state}',[StateController::class,'update'])->name('state.update');
 });
 
 

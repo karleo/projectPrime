@@ -33,12 +33,12 @@ class CountryController extends Controller
             'currency' => $request->currency
         ]);
 
-        return redirect()->route('country.index')->with([
-            'alert' => [
+        return redirect()->route('country.index')->with(
+            'alert', [
                 'type' => 'success',
                 'message' => 'Country name successful added'
             ]
-        ]);
+        );
     }
 
     public function edit(Country $country)
@@ -63,6 +63,6 @@ class CountryController extends Controller
 
     public function destroy()
     {
-        
+
     }
 }
