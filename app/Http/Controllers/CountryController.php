@@ -61,8 +61,12 @@ class CountryController extends Controller
         ]);
     }
 
-    public function destroy()
+    public function destroy(Country $country)
     {
+
+        $country->delete();
+
+        return redirect()->route('country.index')->with('alert', 'Delete');
 
     }
 }

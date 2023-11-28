@@ -89,4 +89,9 @@
 @endpush
 
 @push('scripts') 
+    <script>
+        @if(session('alert'))
+            session('alert')['type']
+        @endif
+    </script>
 @endpush

@@ -61,7 +61,7 @@
                                         <td> {{ $row->code }}</td>
                                         <td> {{ $row->currency }}</td>
                                         <td> <a href='{{ route('country.edit', $row->country_id) }}'><i class="la la-pencil"> </i></a>
-                                            <a onclick="return confirm('Are you sure?')" href=""><i class="la la-trash"></i></a>
+                                            <a onclick="return confirm('Are you sure?')" href='{{ route('country.destroy', $row->country_id) }}' data-method="delete"><i class="la la-trash"></i></a>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -86,5 +86,15 @@
 @push('scripts')
     <script src="{{ asset('plugins/custom/datatables/datatables.bundle.js') }}"></script>
     <script src="{{ asset('js/pages/admin.js') }}"> </script>
+
+    <script>
+        @if(session('alert'))
+            session('alert')['type']
+        @endif
+    </script>
+<script>
+    var _csrf_token = "{{ csrf_token() }}";
+</script>
+
 @endpush
 

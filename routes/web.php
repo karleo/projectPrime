@@ -61,6 +61,7 @@ Route::middleware('auth')->prefix('country')->group(function () {
     Route::post('/create',[CountryController::class,'store'])->name('country.store');
     Route::get('/{country}',[CountryController::class,'edit'])->name('country.edit');
     Route::post('/{country}',[CountryController::class,'update'])->name('country.update');
+    Route::get('/de/{country}',[CountryController::class,'destroy'])->name('country.destroy');
 });
 
 Route::middleware('auth')->prefix('state')->group(function () {
