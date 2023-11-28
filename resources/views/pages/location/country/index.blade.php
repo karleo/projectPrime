@@ -60,7 +60,8 @@
                                         <td>{{ $row->name }}</td>
                                         <td> {{ $row->code }}</td>
                                         <td> {{ $row->currency }}</td>
-                                        <td>  
+                                        <td> <a href='{{ route('country.edit', $row->country_id) }}'><i class="la la-pencil"> </i></a>
+                                            <a onclick="return confirm('Are you sure?')" href=""><i class="la la-trash"></i></a>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -83,10 +84,7 @@
 @endpush
 
 @push('scripts')
-
     <script src="{{ asset('plugins/custom/datatables/datatables.bundle.js') }}"></script>
-
     <script src="{{ asset('js/pages/admin.js') }}"> </script>
-
 @endpush
 

@@ -58,8 +58,8 @@
                                 <tr>
                                     <td>{{ $row->name }}</td>
                                     <td> {{ $row->code }}</td>
-                                    <td> <a href="{{ route('dept.edit', $row->department_id) }}">Edit </a>
-                                        <a href="#"> Delete</a>
+                                    <td> <a href="{{ route('dept.edit', $row->department_id) }}"><i class="la la-pencil"> </i></a>
+                                        <a href="#"> <i class="la la-trash"> </i> </a>
                                     </td>
                                 </tr>
                             @endforeach
