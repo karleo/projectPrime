@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('states', function (Blueprint $table) {
             $table->id('state_id');
-            $table->unsignedInteger('country_id');
+            $table->foreignId('country_id')->references('country_id')->on('countries')->onDelete('cascade')->onUpdate('cascade');
             $table->string('name');
             $table->softDeletes();
             $table->timestamps();
