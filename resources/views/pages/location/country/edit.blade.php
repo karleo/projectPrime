@@ -17,7 +17,10 @@
                 <!--begin::Card-->
                 <div class="card card-custom gutter-b example example-compact">
                     <div class="card-header">
-                        <h3 class="card-title">Update Country</h3>                         
+                        <h3 class="card-title">Update Country</h3>                      
+                        @if(session('alert'))
+                        {{ session('alert')['type']}}
+                    @endif   
                     </div>
                     <!--begin::Form-->
                     <form action="{{ route('country.update', $country->country_id ) }}" method="post" class="form">

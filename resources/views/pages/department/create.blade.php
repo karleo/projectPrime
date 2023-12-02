@@ -1,6 +1,5 @@
 
 @extends('layouts.admin.main')
-
 @section('page.title', 'Create Department')
 
 @section('page.toolbar')

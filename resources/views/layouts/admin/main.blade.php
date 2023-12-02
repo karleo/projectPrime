@@ -8,3 +8,5 @@ Layout: Dashboard Main
 @yield('content')
 @includeIf('layouts.admin.partials.wrapper.footer')
 @includeIf('layouts.admin.base.footer')
+@include('sweetalert::alert')
+

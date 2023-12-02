@@ -1,5 +1,6 @@
 @extends('layouts.admin.main')
 
+
 @section('page.title', 'Country')
 
 @section('page.toolbar')
@@ -20,6 +21,11 @@
                         <i class="flaticon2-supermarket text-primary"></i>
                     </span>
                     <h3 class="card-label"></h3>
+                    @if(session('message'))
+                        <div class="col-lg-12">
+                            <div class="alert alert-danger" role="alert">{{ session('message') }}</div>
+                        </div>
+                    @endif
                 </div>
                 <div class="card-toolbar">
                     <!--begin::Button-->
@@ -61,7 +67,7 @@
                                         <td> {{ $row->code }}</td>
                                         <td> {{ $row->currency }}</td>
                                         <td> <a href='{{ route('country.edit', $row->country_id) }}'><i class="la la-pencil"> </i></a>
-                                            <a onclick="return confirm('Are you sure?')" href='{{ route('country.destroy', $row->country_id) }}' data-method="delete"><i class="la la-trash"></i></a>
+                                            <a  href='{{ route('country.destroy', $row->country_id) }}'  data-confirm-delete="true"  ><i class="la la-trash"></i></a>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -85,16 +91,9 @@
 
 @push('scripts')
     <script src="{{ asset('plugins/custom/datatables/datatables.bundle.js') }}"></script>
-    <script src="{{ asset('js/pages/admin.js') }}"> </script>
-
-    <script>
-        @if(session('alert'))
-            session('alert')['type']
-        @endif
-    </script>
+    <script src="{{ asset('js/pages/admin.js') }}"> </script> 
 <script>
     var _csrf_token = "{{ csrf_token() }}";
 </script>
 
 @endpush
-
