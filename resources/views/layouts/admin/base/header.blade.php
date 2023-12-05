@@ -6,7 +6,6 @@
     <title>{{ config('app.name', 'Laravel') }} | @yield('page.title', 'Default Page')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     @includeIf('layouts.admin.base.styles')
-    @include('sweetalert::alert')
 
     @stack('styles')
 </head>

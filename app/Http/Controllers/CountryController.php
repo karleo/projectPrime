@@ -11,14 +11,11 @@ class CountryController extends Controller
     //
     public function index()
     {
-        $data = Country::all();
+        $data = Country::latest()->paginate(10);
         
         $title = 'Delete country!';
         $text = "Are you sure you want to delete?";
-        confirmDelete($title, $text);
-        Alert::alert('Title', 'Message', 'Type');
-
-      
+        confirmDelete($title, $text);      
 
         return view('pages.location.country.index',compact('data'));
     }
@@ -70,10 +67,11 @@ class CountryController extends Controller
 
         if($country->state()->count())
         {
+            $data = Alert::warning('Can not delete', 'Country had a state');  
             return back()->withMessage('Cannot delete: this Country has State data');
         }
-        $country->delete();
 
+        $country->delete();
         return redirect()->route('country.index')->with('alert', 'Delete');
 
     }
