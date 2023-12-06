@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Country;
-use RealRashid\SweetAlert\Facades\Alert;
 
 class CountryController extends Controller
 {
@@ -12,10 +11,7 @@ class CountryController extends Controller
     public function index()
     {
         $data = Country::latest()->paginate(10);
-        
-        $title = 'Delete country!';
-        $text = "Are you sure you want to delete?";
-        confirmDelete($title, $text);      
+   
 
         return view('pages.location.country.index',compact('data'));
     }
@@ -67,7 +63,6 @@ class CountryController extends Controller
 
         if($country->state()->count())
         {
-            $data = Alert::warning('Can not delete', 'Country had a state');  
             return back()->withMessage('Cannot delete: this Country has State data');
         }
 
