@@ -1,6 +1,5 @@
 @extends('layouts.admin.main')
 
-
 @section('page.title', 'Country')
 
 @section('page.toolbar')
@@ -21,11 +20,11 @@
                         <i class="flaticon2-supermarket text-primary"></i>
                     </span>
                     <h3 class="card-label"></h3>
-                    @if(session('message'))
+                    {{-- @if(session('message'))
                         <div class="col-lg-12">
                             <div class="alert alert-danger" role="alert">{{ session('message') }}</div>
                         </div>
-                    @endif
+                    @endif --}}
                 </div>
                 <div class="card-toolbar">
                     <!--begin::Button-->
@@ -67,7 +66,7 @@
                                         <td> {{ $row->code }}</td>
                                         <td> {{ $row->currency }}</td>
                                         <td> <a href='{{ route('country.edit', $row->country_id) }}'><i class="la la-pencil"> </i></a>
-                                            <a  href='{{ route('country.destroy', $row->country_id) }}'  data-confirm-delete="true"  ><i class="la la-trash"></i></a>
+                                            <a type="button" id="kt_sweetalert_demo_9" href='{{ route('country.destroy', $row->country_id) }}'  ><i class="la la-trash"></i></a>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -87,13 +86,69 @@
 
 @push('styles')
     <link href="{{ asset('plugins/custom/datatables/datatables.bundle.css') }}" rel="stylesheet" type="text/css" />
+    <link href="
+    https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.min.css
+" rel="stylesheet">
+
 @endpush
 
 @push('scripts')
     <script src="{{ asset('plugins/custom/datatables/datatables.bundle.js') }}"></script>
-    <script src="{{ asset('js/pages/admin.js') }}"> </script> 
-<script>
-    var _csrf_token = "{{ csrf_token() }}";
-</script>
+    <script src="{{ asset('js/pages/admin.js') }}"> </script>  
+    <script src="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js
+"></script>
 
+<script>
+
+
+$("#kt_sweetalert_demo_9").click(function(e) {
+    Swal.fire({
+        title: "Are you sure?",
+        text: "You wont be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        timer: 55000,
+        confirmButtonText: "Yes, delete it!",
+        cancelButtonText: "No, cancel!",
+        reverseButtons: true
+      
+    }).then(function(result) {
+        if (result.value) {
+            Swal.fire(
+                "Deleted!",
+                "Your file has been deleted.",
+                "success"
+            )
+            // result.dismiss can be "cancel", "overlay",
+            // "close", and "timer"
+        } else if (result.dismiss === "cancel") {
+            Swal.fire(
+                "Cancelled",
+                "Your imaginary file is safe :)",
+                "error"
+            )
+        }
+    });
+});
+
+ $("#kt_sweetalert_demo_5").click(function (e) {
+	Swal.fire({
+		title: "Good job!",
+		text: "You clicked the button!",
+		icon: "success",
+		buttonsStyling: false,
+		confirmButtonText: "<i class='la la-headphones'></i> I am game!",
+		showCancelButton: true,
+		cancelButtonText: "<i class='la la-thumbs-down'></i> No, thanks",
+		customClass: {
+			confirmButton: "btn btn-danger",
+			cancelButton: "btn btn-default"
+		}
+	});
+});
+
+
+
+</script>
 @endpush

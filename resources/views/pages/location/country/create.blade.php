@@ -27,17 +27,17 @@
                                 <div class="col-lg-6">
                                     <label>Country Name:</label>
                                     <input type="text" class="form-control" name="name" placeholder="Enter country name" />
-                                        @if($errors->has('name'))
+                                        {{-- @if($errors->has('name'))
                                             <div class="alert alert-danger">{{ $errors->first('name') }}</div>
-                                        @endif
+                                        @endif --}}
                                     <span class="form-text text-muted">Please enter country name</span>
                                 </div>
                                 <div class="col-lg-6">
                                     <label>Country code:</label>
                                     <input type="text" class="form-control" name="code" placeholder="Enter country code" />
-                                        @if($errors->has('code'))
+                                        {{-- @if($errors->has('code'))
                                             <div class="alert alert-danger">{{ $errors->first('code') }}</div>
-                                        @endif
+                                        @endif --}}
                                     <span class="form-text text-muted">Please enter country code</span>
                                 </div>
                             </div>
@@ -52,9 +52,9 @@
                                             </span>
                                         </div>
                                     </div>
-                                        @if($errors->has('currency'))
+                                        {{-- @if($errors->has('currency'))
                                             <div class="alert alert-danger">{{ $errors->first('currency') }}</div>
-                                        @endif
+                                        @endif --}}
                                     <span class="form-text text-muted">Please enter country currency</span>
                                 </div> 
                             </div> 
