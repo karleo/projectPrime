@@ -2,7 +2,6 @@
 Layout: Dashboard Main
 --}}
 @includeIf('layouts.admin.base.header')
-@include('sweetalert::alert')
 @includeIf('layouts.admin.partials.nav.sidebar-left')
 @includeIf('layouts.admin.partials.wrapper.header')
 @includeIf('layouts.admin.partials.headers.sub-header')
